@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Digital agency, SMM production, design">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=PT+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--favicon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons//favicon-16x16.png">
+    <link rel="manifest" href="img/favicons//site.webmanifest">
+    <link rel="mask-icon" href="img/favicons//safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title>SkyX - регистрация на экскурсию</title>
+</head>
+<body>
+    <div class="wrapper" id="wrapper">
+        <div class="header__wrap" id="header__wrap">
+            <div class="container">
+                <div class="header" id="header">
+                    <a href="index.html">
+                        <div class="logo">
+                            <svg class="logo__letter logo__letter-s">
+                                <use xlink:href="img/let1.svg#let1"></use>
+                            </svg>
+                            <svg class="logo__letter logo__letter-k">
+                                <use xlink:href="img/let2.svg#let2"></use>
+                            </svg>
+                            <svg class="logo__letter logo__letter-y">
+                                <use xlink:href="img/let3.svg#let3"></use>
+                            </svg>
+                            <svg class="logo__img">
+                                <use xlink:href="img/logo.svg#logo"></use>
+                            </svg>
+                        </div>
+                    </a>
+                    <div class="burger__btn " id="burger-btn">
+                        <div class="burger__line burger__line-one"></div>
+                        <div class="burger__line burger__line-center"></div>
+                        <div class="burger__line burger__line-two"></div>
+                    </div>
+                </div>
+            </div> <!--container-->
+        </div> <!--header__wrap-->
+        <nav class="nav" id="nav">
+            <ul class="nav__list">
+                <li><a href="events.html">Лента событий</a></li>
+                <li><a href="index.html">Экскурсии в Sky X</a></li>
+                <li class="link__active"><a href="reserve.html">Бронирование Sky X</a></li>
+            </ul>
+        </nav>
+
+        <!--INTRO =====================-->
+        <section class="intro">
+            <div class="container">
+                <div class="main">
+                    <h1 class="main__title reserve-main__title">Проведи свое мероприятие в <span>SkyX</span></h1>
+                </div>
+            </div>
+        </section>
+ 
+        <!--ABOUT =====================-->
+        <section class="about">
+            <div class="container">
+                <h1 class="about__title">Офис нового формата</h1>
+                <p class="about__text"><span>SkyX</span> -  это современное пространство, в котором мы создаем продукты и услуги, улучшающие нашу каждодневную жизнь. Это офис нового формата, где нет постоянных рабочих мест, где все мобильны и свободны, где можно реализовать самые необычные и смелые идеи. В SkyX нет случайных людей и случайных идей, и каждый наш гость – это друг, партнер и единомышленник, который вместе с нами создает ценность кыргызстанцам. 
+                </p>
+            </div> <!--container-->
+            <div class="line">
+                <img class="line__img" src="img/linex.svg">
+            </div>
+        </section>
+
+        <!--REGISTRY =====================-->
+        <div class="registry" id="registry2">
+            <div class="container">
+                <h2 class="registry__title">Оставить заявку на бронь</h2>
+                <p class="registry__subtitle">Заполните форму оставив свои личные данные:</p>
+                <div class="registry__item">
+                    <form class="form" id="form_reserve" action="" method="POST">
+                        <div class="not-filled" id="name-notfil">Укажите ваше имя</div>
+                        <input class="input field-red" id="name" name="name" type="text" placeholder="Ваше имя" required>
+                        <div class="not-filled" id="soname-notfil">Укажите вашу фамилию</div>
+                        <input class="input field-red" id="soname" name="soname" type="text" placeholder="Ваше фамилия" required>
+                        <div class="not-filled" id="email-notfil">Укажите ваш email</div>
+                        <input class="input field-red" type="email" name="email" placeholder="Ваш email" required id="email">
+                        <div class="not-filled" id="organ-notfil">Укажите название вашей организации</div>
+                        <input class="input field-red" id="organ" name="organ" type="text" placeholder="Название организации" required>
+                        <div class="not-filled" id="time-notfil">Укажите время бронирования</div>
+                        <input class="input field-red" id="time" name="time" type="text" placeholder="Время бронирования" required onfocus="(this.type='time')">
+                        <div class="not-filled" id="date-notfil">Укажите дату бронирования</div>
+                        <input class="input field-red" id="date" name="date" type="text" placeholder="Дата бронирования" required onfocus="(this.type='date')" min="2023-04-01" max="2024-12-31">
+                        <button class="input__btn btn" id="form__btn" type="submit" value="btn2">Зарегистрироваться</button> 
+                    </form>  
+                        
+                    <!--MODALS ==================-->
+                    <div class="modal" id="modal_send">
+                        <div class="modal__dialog" id="modal_dialog">
+                            <div class="modal__btn" data-close></div>
+                            <p class="modal__title"></p>
+                            <p class="modal__text"></p>
+                            <div class="modal__button" data-close>
+                                <span class="btn__line btn__line-1"></span>
+                                <span class="btn__line btn__line-2"></span>
+                            </div> 
+                        </div> <!--modal__dialog-->
+                        <div class="load" id="load"></div>   
+                    </div> <!--modal-->
+
+                    <div style='display:none' id='modal_title_ok'>Уважаемый пользователь 
+                        <img  class="modal__dialog-icon" src="img/title_icon/bloggers_title.png" alt="">
+                    </div>
+
+                    <div style='display:none' id='modal_text_ok'>Ваша заявка успешно отправлена!<br> Мы рассмотрим ее в течение 2 дней и свяжемся с вами.<br>Добро пожаловать в SkyX!</div>
+
+                    <div style='display:none' id='modal_title_error'>Ошибка!</div>
+
+                    <div style='display:none' id='modal_text_error'>Что-то пошло не так на сервере: </div>
+                </div>
+            </div>
+        </div>
+    </div> <!--wrapper-->
+
+    <!-- SCRIPT 
+    ====================-->
+    <script src="js/slick.min.js"></script>
+    <script src="js/gsap.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/move.js"></script>
+ 
+    
+</body>
+</html>          
