@@ -1,0 +1,72 @@
+@import "vars";
+@import "mixins";
+
+html, body {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    background: $background;
+    color: $gray;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    &.no-scroll {
+      overflow: hidden;
+    }
+}
+
+.wrapper {
+    overflow: hidden;
+    &.wrapper-show {
+        position: fixed;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+       
+        &:after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: rgb($black, .7);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 4;  
+         }
+    }   
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+p, span, h2 {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+// Vendar 
+@import "vendar/slick";
+
+/* Blocks */
+@import "blocks/intro";
+@import "blocks/container";
+@import "blocks/about";
+@import "blocks/registry";
+@import "blocks/reserve";
+@import "blocks/events";
+@import "blocks/fact";

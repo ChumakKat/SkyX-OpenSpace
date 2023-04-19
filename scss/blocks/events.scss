@@ -1,0 +1,282 @@
+.event-main {
+    position: relative;
+    background-color: $eventsbeck;
+    padding-top: 98px;
+}
+
+.event__line {
+    width: 100%;
+    height: 308px;
+    background-color: $blue;
+
+    position: absolute;
+    top: 180px;
+    left: 0;
+    z-index: 0;
+
+    @include breakpoint ($desktop-bp-992) {
+        height: 360px;
+        top: 140px;
+       }
+    @include breakpoint ($tablets-bp-768) {
+        top: 98px;
+       }
+}
+
+.event-main__box {
+    display: flex;
+    position: relative;
+     
+    @include breakpoint ($desktop-bp-992) {
+        flex-direction: column;
+       }
+}
+
+.event-main__info {
+    z-index: 2;
+    color: $white;
+    margin-top: 115px;
+
+    @include breakpoint ($desktop-bp-992) {
+        text-align: center;
+        margin-top: 80px;
+       }
+    @include breakpoint ($tablets-bp-768) {
+        margin-top: 50px;
+       }
+}
+
+.event__title {
+    font-size: 50px;
+    font-family: 'PT Mono', monospace;
+    font-weight:  bold; 
+    margin-bottom: 34px;
+    
+    @include breakpoint ($tablets-bp-768) {
+        font-size: 45px;
+       }
+
+    @include breakpoint ($mobile-bp-576) {
+        font-size: 35px;
+       }
+}
+
+.event__subtitle {
+    font-size: 20px;
+    font-family: 'PT Mono', monospace;
+    margin-bottom: 54px;
+
+    & span {
+        font-family: 'PT Mono', monospace;
+        font-weight:  bold; 
+    }
+
+    @include breakpoint ($desktop-bp-992) {
+        font-size: 18px;
+       }
+}
+
+.event__btn {
+    padding: 14px 26px;
+    background-color: $white;
+    color: $blue;
+    width: max-content;
+    border-radius: 3px;
+    transition: all .3s linear;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $gray;
+        color: $white;
+    }
+
+    @include breakpoint ($desktop-bp-992) {
+        position: absolute;
+        left: 50%;
+        transform:  translate(-50%);
+        z-index: 1000;
+        bottom: 35px;
+       }
+}
+
+.event-main__img {
+    position: relative;
+    right: -8%;
+    z-index: 2;
+    display: block;
+    margin: 50px 0 60px;
+
+    @include breakpoint (1088px) {
+       width: 100%;
+       max-width: 470px;
+       right: -3%;
+       }
+
+    @include breakpoint ($desktop-bp-992) {
+        position: relative;
+        right: 0;
+        top: -60px;
+       max-width: none;
+   
+       & img {
+        display: block;
+        width: 100%;
+        max-width: 567px;
+        margin: 0 auto;
+        }
+       }
+
+    &-fact {
+        @include breakpoint ($desktop-bp-992) {
+            margin: 50px 0 0;
+           }
+    }
+}
+
+/* EVENT INFO*/
+
+.event__info {
+    padding: 50px 0;
+   
+    @include breakpoint ($tablets-bp-768) {
+        padding: 40px 0;
+       }
+}
+
+.event-about__title {
+    margin-bottom: 20px;
+}
+
+.event-registry__subtitle {
+    text-align: center;
+   
+    @include breakpoint ($desktop-bp-992) {
+       margin-bottom: 55px;
+      }
+    @include breakpoint ($tablets-bp-768) {
+       margin-bottom: 40px;
+      }
+}
+
+/*item*/
+.event__info-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 60px 35px;
+    margin-bottom: 50px;
+
+    @include breakpoint ($desktop-bp-992) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 40px 25px;
+      }
+
+    @include breakpoint ($mobile-bp-576) {
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 30px;
+        margin-bottom: 40px;
+      }
+}
+
+.event__info-item {
+    background-color: $white;
+    overflow: hidden;
+    border-top-left-radius: 20px;
+    position: relative;
+
+    &:hover {
+        .event-item__wrap {
+            opacity: 1;
+        }
+    }
+}
+
+.event-item__wrap {
+    display: flex;
+    flex-direction: column;
+   justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    background-color: $blue;
+    opacity: 0;
+    transition:all .5s linear;
+    padding: 34px 30px 100px;
+}
+
+.event-item__wrap-kind {
+    text-transform: uppercase;
+    font-family: 'PT Mono', monospace;
+    color: $white;
+    margin-bottom:20px ;
+    font-size: 16px;
+}
+
+.event-item__wrap-title {
+    font-family: 'PT Mono', monospace;
+    font-weight: bold;
+    font-size: 24px;
+    color: $white;
+    transition:opacity .3s linear;
+}
+
+.event-item__wrap-text {
+    color: #73ddfd;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding-bottom: 25px;
+    border-bottom: 1px solid $white;
+}
+
+.event-item__info {
+   padding: 26px 30px 40px;
+   
+   @include breakpoint ($tablets-bp-768) {
+    padding: 26px 17px 30px;
+  }
+}
+
+.event-item__kind {
+    text-transform: uppercase;
+    font-family: 'PT Mono', monospace;
+    color: #b3b3b3;
+    margin-bottom:20px ;
+    font-size: 16px;
+}
+
+.event-item__title {
+    font-family: 'PT Mono', monospace;
+    font-weight: bold;
+    font-size: 18px;
+    color: $gray;
+    transition:opacity .3s linear
+}
+
+
+.event-item__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.event__btn-footer {
+    background-color: $blue;
+    color: $white;
+    margin: 0 auto;
+    padding: 14px 26px;
+    width: max-content;
+    border-radius: 3px;
+    transition: all .3s linear;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $gray;
+        color: $white;
+    }
+}

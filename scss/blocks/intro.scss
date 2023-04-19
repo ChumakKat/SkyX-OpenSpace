@@ -1,0 +1,463 @@
+.intro {
+    background: url(/img/backgr.png) center;
+    background-size: cover;
+    width: 100%;
+    height: 640px;
+    transform-style: preserve-3d;
+    padding-top: 98px;
+
+    @include breakpoint ($desktop-bp-992) {
+        padding-top: 118px;
+     }
+
+    @include breakpoint ($tablets-bp-768) {
+        background: url(/img/backgr_mob.png) center;
+        background-size: cover;
+        transform-style: flat;
+        transform: rotate(0)!important;
+        transform: translateY(0)!important;
+     }
+}
+
+/* header */
+
+.header__wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    transition: all .5s linear;
+  
+    &.header__wrap-show {
+        background-color: #515151; 
+        
+        & .logo__letter {
+            fill: $white;
+        }
+    }  
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 50px 0;
+    position: relative;
+
+    @include breakpoint ($desktop-bp-992) {
+        padding: 40px 0;
+     }
+
+    @include breakpoint ($tablets-bp-768) {
+        justify-content: space-between;
+        padding: 24px 0;
+        position: relative;
+        z-index: 100;   
+     }   
+}
+
+/* logo */
+.logo {
+    display: flex;
+    align-items: center;
+    transition: all .5s linear;
+
+    &:hover {
+        .logo__letter {
+            fill: $blue;
+        }
+    }
+
+    &-event {
+        .logo__letter {
+            fill: $gray;
+        }
+    }
+}
+
+.logo__letter {
+    height: 21px;
+    fill: $white;
+    
+    &-s {
+        width: 14px;
+        transition: all 1s linear;
+
+        @include breakpoint ($tablets-bp-768) {
+           width: 11.5px;
+         }
+    }
+    &-k {
+        width: 16px;
+        transition: all 1s linear .3s;
+        margin: 0 0 0 4px;
+        @include breakpoint ($tablets-bp-768) {
+            width: 13px;
+          }
+    }
+    &-y {
+        width: 18px;
+        transition: all 1s linear .6s;
+        @include breakpoint ($tablets-bp-768) {
+            width: 15px;
+          }
+    }
+}
+
+.logo__img {
+    width: 62px;
+    height: 60px;
+    fill: $blue;
+    transition: all 1s linear .8s;
+
+    @include breakpoint ($tablets-bp-768) {
+        width: 52px;
+        height: 50px;
+      }
+}
+
+/* nav */
+.nav_burger_unlocked {
+    content: "";
+}
+
+.nav {
+    margin: 0 auto;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 100;
+    font-family: 'Fira Sans', sans-serif;
+
+    &.nav-show {
+        display: flex;
+        justify-content: flex-end;
+
+        & .nav__list-event {
+            & li {
+                & a {
+                    color: $white;
+                }  
+            }
+        }
+
+        & .link__active {
+            & a {
+                color: $white !important ;
+            }
+        }
+    }
+
+    &.nav-transform {
+        transform: translateY(0);
+     }  
+
+    @include breakpoint ($desktop-bp-992) {
+        top: 60px;
+        left: 60%;
+        transform: translate(-60%);
+     }
+    @include breakpoint (800px) {
+        left: 80%;
+        transform: translate(-80%);
+     }
+
+     @include breakpoint ($tablets-bp-768) {
+        display: none;
+        position:absolute;
+        padding-top: 98px;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        z-index: 6;
+        height: 100%;
+        background-color: $blue;
+        overflow: auto;
+        transform: translateY(-150%);
+        transition: all .7s linear;
+     }
+}
+
+.nav__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    color: $white;
+    white-space: nowrap;
+    width: 100%;
+   
+    & li:nth-child(2) {
+        margin: 0 95px;
+
+        @include breakpoint ($desktop-bp-992) {
+            margin: 0 60px;
+         }
+        @include breakpoint ($tablets-bp-768) {
+            margin: 25px 0;
+         }
+    }
+
+    & li {
+        & a {
+            color: $white;
+            transition: all .3s linear;
+
+            &:hover {
+                color: $blue;
+                cursor: pointer;
+            }
+        }  
+    }
+
+    &-event { 
+        & li {
+            & a {
+                color: #afafaf;
+                transition: all .3s linear;
+
+                &:hover {
+                    color: $blue;
+                    cursor: pointer;
+                }
+            }  
+        }
+    }
+
+    & .link__active {
+        & a {
+            color: $blue;
+        }
+    }
+  
+    @include breakpoint ($tablets-bp-768) {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: end;
+        margin: 0;
+        font-size: 20px;
+        color: $textburg;
+        padding: 20px;
+        height: 100%;
+        overflow: auto;
+
+        & li {
+            margin: 25px 0;
+        }
+      
+        & li:active {
+            color: $white;
+        }
+        & li:hover {
+            color: $white;
+        }
+        & li:focus {
+            color: $white;
+        }
+    } 
+}
+
+/* main */
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+   
+    @include breakpoint ($tablets-bp-768) {
+        transform-style:flat;
+        transform: rotate(0)!important;
+        transform: translateY(0)!important;
+      }
+}
+
+.main__title {
+    font-size: 68px;
+    font-family: 'PT Mono', monospace;
+    color: $white;
+    margin-top: 70px ;
+    margin-bottom: 40px;
+    font-weight: bold;
+    transform: translateZ(20px);
+    text-align: center;
+
+    @include breakpoint ($desktop-bp-992) {
+        font-size: 50px;
+     }
+    @include breakpoint ($tablets-bp-768) {
+       font-size: 40px;
+       transform: translateZ(0);
+     }
+    @include breakpoint ($mobile-bp-480) {
+       font-size: 35px;
+     }
+    @include breakpoint ($mobile-bp-375) {
+       font-size: 32px;
+     }
+}
+
+.main__subtitle {
+    font-size: 20px;
+    font-family: 'PT Mono', monospace;
+    color: $white;
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 70px;
+    transform: translateZ(-35px);
+
+    & span {
+        font-weight: bold;
+    }
+
+    @include breakpoint ($tablets-bp-768) {
+        font-size: 18px;
+      }
+
+    @include breakpoint ($mobile-bp-576) {
+        font-size: 16px;
+      }
+}
+
+.btn__wrap {
+    zoom: .9;
+    position: relative;
+    width: 170px;
+    height: 43px;
+    transform-style: preserve-3d;
+    display: inline-block;
+
+    @include breakpoint ($tablets-bp-768) {
+        transform-style: flat;
+      }
+}
+
+.fon {
+    position: absolute;
+    opacity: 0;
+    width: 170px;
+    height: 43px;
+    border-radius: 3px;
+    transition: all 1s ease;
+    transform-style: preserve-3d; 
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: $blue;
+    background-color: $white;
+    border-radius: 3px;
+    transition: all .5s linear;
+   
+    &:hover {
+        background-color: $blue;
+        color: $white;
+        cursor: pointer;
+    }
+}
+
+.fon-btn {
+    left: 0;
+    z-index: 10;
+}
+
+.fon-one {
+    left: 0;
+    z-index: 8;
+    top: 30px;
+    left: -50px;
+    background: rgba($blue, .4);
+    
+    @include breakpoint ($tablets-bp-768) {
+        display: none;
+      }
+}
+
+.fon-two {
+    left: 0;
+    z-index: 6;
+    background: rgba($blue, .2);
+    left: -100px;
+    top: 60px;
+
+    @include breakpoint ($tablets-bp-768) {
+        display: none;
+      }
+}
+
+.level--1{
+    transform: translateZ(-30px);
+}
+
+.level--2 {
+    transform: translateZ(-60px);
+}
+
+
+/* BURGER BUTTON */
+
+.burger__btn {
+    display: none;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 37px;
+    right: 0;
+    z-index: 200;
+
+    @include breakpoint ($tablets-bp-768) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &-close {
+        .burger__line-center  {
+            margin: -2px 0;
+        }
+    }
+
+    &-rotate {
+        .burger__line-one {
+            transform: rotate(45deg);
+            position: relative;
+            top: 1px;
+        }
+        .burger__line-two {
+            transform: rotate(-45deg);
+            position: relative;
+            bottom: 1px;
+        }
+        .burger__line-center {
+            display: none;
+        }
+    }
+
+    &-event {
+        .burger__line {
+            background-color: $gray;
+        }
+
+        &.burger__btn-close {
+            .burger__line {
+                background-color: $white; 
+            }
+        }
+    }
+}
+
+.burger__line {
+    background-color: $white;
+    width: 100%;
+    height: 2px;
+    transition: all .4s linear;
+}
+
+.burger__line-center {
+    margin: 6px 0;
+}

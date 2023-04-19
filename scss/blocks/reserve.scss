@@ -1,0 +1,24 @@
+.reserve-main__title {
+    max-width: 750px;
+    margin-top: 130px;
+    line-height: 1.3;
+    & span {
+        color: $blue;
+    }
+}
+
+.line {
+    display: block;
+    background-color: $blue;
+    width: 100%;
+    height: 72px;
+    overflow: hidden;
+    position: relative;
+}
+
+.line__img {
+    position: absolute;
+    top: -23px;
+    right: 70px;
+    z-index: 1;
+}

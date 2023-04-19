@@ -1,0 +1,77 @@
+.about {
+    margin: 50px 0;
+    color: $gray;
+}
+
+.about__title {
+    font-size: 40px;
+    font-family: 'PT Mono', monospace;
+    font-weight:  bold;
+    text-align: center;
+    margin-bottom: 45px;
+
+    @include breakpoint ($desktop-bp-992) {
+      font-size: 35px;
+      margin-bottom: 35px;
+     }
+
+    @include breakpoint ($tablets-bp-768) {
+      font-size: 32px;
+      margin-bottom: 25px;
+     }
+
+    @include breakpoint ($mobile-bp-480) {
+      font-size: 28px;
+      margin-top: 0;
+      margin-bottom: 20px;
+     }
+    @include breakpoint ($mobile-bp-375) {
+      font-size: 25px;
+     }
+}
+
+.about__text {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 50px;
+
+    & span {
+        color: $blue;
+        font-weight: bold;
+    }
+
+    @include breakpoint ($tablets-bp-768) {
+        font-size: 18px;
+       }
+    @include breakpoint ($mobile-bp-576) {
+        font-size: 16px;
+       }
+}
+
+/* slider */
+.slider {
+    position: relative;
+    
+}
+
+.slider__block {
+    position: relative;
+    z-index: 2;
+}
+
+.slider__img {
+    margin: 0 20px;
+}
+
+.slider__back {
+    height: 200px;
+    background-color: $blue;
+    display: block;
+    width: 100%;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 0;
+}

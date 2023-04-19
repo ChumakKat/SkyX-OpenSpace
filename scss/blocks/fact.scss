@@ -1,0 +1,107 @@
+.event__info-fact {
+    padding-bottom:0;
+}
+
+.fact__info-items, 
+.fact__line-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 70px;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 50px;
+
+    @include breakpoint ($desktop-bp-992) {
+        grid-column-gap: 50px;
+        font-size: 18px;
+      }
+
+    @include breakpoint ($tablets-bp-768) {
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 30px;
+        margin-bottom: 0;
+      }
+
+    @include breakpoint ($mobile-bp-576) {
+       font-size: 16px;
+      }
+} 
+
+.fact__info-line {
+    position: relative;
+    z-index: 10;
+}
+
+.fact__line {
+    width: 100%;
+    height: 209px;
+    background-color: $blue;
+
+    position: absolute;
+    z-index: -1;
+    top: 50px;
+
+    @include breakpoint ($tablets-bp-768) {
+    height: 230px;
+    }
+
+    @include breakpoint ($mobile-bp-576) {
+    height: 300px;
+    }
+}
+
+.fact__line-item {
+    font-family: 'PT Mono', monospace;
+    color: $white;
+    line-height: 1.6;
+
+    &-info {
+        margin-top: 80px;
+
+        @include breakpoint ($desktop-bp-992) {
+            margin-top: 70px;
+            font-size: 18px;
+          }
+
+          @include breakpoint ($tablets-bp-768) {
+           order: -1;
+          
+          }
+          @include breakpoint ($mobile-bp-576) {
+         
+           font-size: 16px;
+          }
+    }
+
+    &-img {
+        @include breakpoint ($tablets-bp-768) {
+            margin: 0 auto;
+           }
+    }
+}
+
+.fact__line-img {
+    display: block;
+    width: 100%;
+}
+
+.fact__info-text {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 70px;
+
+    @include breakpoint ($desktop-bp-992) {
+        font-size: 18px;
+      }
+
+    @include breakpoint ($tablets-bp-768) {
+       margin-top: 30px;
+       margin-bottom: 40px;
+      }
+
+      @include breakpoint ($mobile-bp-576) {
+        font-size: 16px;
+       }
+}
